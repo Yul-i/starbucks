@@ -1,0 +1,616 @@
+@charset "UFT-8";
+
+/* common ==================================================================== */
+.blind{
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+}
+.container{
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+}
+.row::after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+h3{
+    margin-bottom: 50px;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* sprites ==================================================================== */
+
+.sp{display: inline-block; background-image: url(../img/sprites.png); background-repeat: no-repeat;}
+/* sprites이미지는 기본 block이지만, span에선 적용이 안되서 여기서 바꿔주는 것 */
+.sp-logo{width: 60px; height: 60px; background-position: 0 0;}
+.sp-logo-text{width: 220px; height: 21px; background-position: -150px -100px;}
+.sp-map{width: 50px; height: 50px; background-position: -100px 0;}
+.sp-menu{width: 60px; height: 60px; background-position: -200px 0;}
+.sp-close{width: 60px; height: 60px; background-position: -200px -130px;}
+.sp-search{width: 40px; height: 40px; background-position: -150px 0;}
+.sp-facebook{width: 60px; height: 60px; background-position: -300px 0;}
+.sp-pinterest{width: 60px; height: 60px; background-position: -400px 0;}
+.sp-twitter{width: 60px; height: 60px; background-position: -500px 0;}
+.sp-prev{width: 60px; height: 60px; background-position: -400px -100px;}
+.sp-next{width: 60px; height: 60px; background-position: -500px -100px;}
+.sp-appstore{width: 146px; height: 43px; background-position: 0 -100px;}
+.sp-googleplay{width: 146px; height: 43px; background-position: 0 -150px;}
+
+
+/* header ==================================================================== */
+header{
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+}
+header h1{
+    float: left;
+    padding: 20px 0 0 20px;
+}
+header .btn-store{
+    position: relative;
+    width: 160px;
+    height: 50px;
+    margin: 25px 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #555;
+    font-size: 18px;
+    text-indent: 25px;
+} 
+header .btn-store .sp-map{
+    position: absolute;
+    top: 0; left: 0;
+
+} 
+header .login-group{
+    position: absolute;
+    top: 25px; right: 20px;
+}
+header .login-group [class^="btn"]{
+    float: left;
+    width: 120px;
+    height: 50px;
+}
+header .login-group .btn-sign-up{
+    background: #006140;
+    color: #fff;
+}
+header .login-group .sp-star{display: none;}
+
+
+/* gnb ====================================================================================== */
+.gnb{
+    z-index: 100;
+    position: fixed;
+    top: 150px; left: 0;
+    bottom: 50px;
+    width: 200px;
+    border-right: 1px solid #ccc;
+}
+.gnb .sp-menu, .gnb .sp-close{
+    z-index: 1;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+.gnb .gnb-popup{display: none;}
+
+.gnb .gnb-popup.open{
+    display: block;
+   position: fixed;
+   left:200px;
+   top:0; 
+   bottom:0; 
+   right:0;
+   background: #fff;
+   border-left:1px solid #ccc;
+}
+
+.gnb .gnb-popup ul{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+.gnb .gnb-popup ul li a{
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 80px;
+    text-transform: uppercase;
+    text-align: center;
+ }
+ .gnb .gnb-popup ul li a:hover{
+     color: #006140;
+ }
+
+/* section ============================================================================ */
+section{
+    padding-top: 100px;
+}
+
+/* slide */
+
+.slide{
+    background: url(../img/logo-bg.png) no-repeat left center,
+                url(../img/bg-pattern3.jpg) repeat-y top center;
+    background-size: auto 100% auto;
+}
+.slide .swiper-container{
+    position: relative;
+    z-index: 1;
+    height: 800px;
+    margin: 0 20px;
+}
+.slide .swiper-slide{opacity: 0 !important;}
+.slide .swiper-slide-active{opacity: 1 !important;}
+.slide .swiper-slide > span{
+    display: inline-block;
+    padding-top: 100px;
+    color: #777;
+    font-size: 24px;
+}
+.slide .swiper-slide b{
+    display: block;
+    padding: 80px 0;
+    color: #555;
+    font-size: 60px;
+    font-weight: 700;
+}
+.slide .swiper-slide b span{
+    color: #006140;
+} 
+.slide .swiper-slide p{
+    padding-bottom: 40px;
+    color: #777;
+    font-size: 18px;
+    line-height: 36px;
+}
+.slide .swiper-slide button{
+    width: 180px;
+    height: 60px;
+    background: #006140;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+.slide img{
+    position: absolute;
+    bottom: 0; right: 0;
+}
+.slide .pagination{
+    position: absolute;
+    bottom: 100px; left: 20px;
+}
+.slide .pagination .page{
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #777;
+}
+.slide .pagination .swiper-pagination{
+    margin: 7px 0 0 25px;
+    width: 180px;
+    height: 3px;
+    background: #ccc;
+}
+.slide .pagination .swiper-pagination-progressbar-fill{
+    background: #777;
+}
+.slide .controls{
+    z-index: 1;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    width: 350px; height: 120px;
+    background: #006140;
+}
+.slide .controls .arrow{
+    float: left;
+    width: 60px;
+}
+.slide .controls .arrow button{display: block;}
+.slide .controls .info{
+    float: left;
+    width: 290px; height: 120px;
+}
+.slide .controls .info .progress{
+    height: 5px;
+    background: #004c33;
+}
+.slide .controls .info .progress span{
+    display: block;
+    width: 70px; height: 5px;
+    background: #fff;
+}
+.slide .controls .info .text-box{    
+    padding: 25px 20px 20px;
+}
+.slide .controls .info .text-box span{
+    font-size: 14px;
+    color: #ccc;
+}
+.slide .controls .info .text-box .page{
+    position: absolute;
+    right: 20px;
+}
+.slide .controls .info .text-box b{
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* service ======================================================================== */
+.service{
+    padding:100px 0 140px;
+}
+.service .col{
+    float: left;
+    width: 50%;
+}
+.service .col .wrap{
+    margin:0 20px;
+}
+.service .col .wrap a{
+    display:block;
+}
+.service .col .wrap a img{
+    width: 100%;
+    display: block; /* or vatical-align : top   */
+    box-sizing: border-box;
+}
+
+.service .col .wrap .inner-col1{
+    margin-bottom: 40px;
+}
+.service .col .wrap .inner-col2{
+    float: left;
+    width: 50%;
+}
+.service .col .wrap .inner-col2 img{
+    padding-right: 20px;
+}
+.service .col .wrap .inner-col3{
+    float: left;
+    width: 50%;
+}
+.service .col .wrap .inner-col3 img{
+    padding-left: 20px;
+}
+
+/* store========================================================================== */
+
+.store{
+    padding-bottom: 140px;
+}
+.store h3{
+    color: #555;
+}
+.store h3 span{
+    color: #008055;
+}
+.store .row{
+    height: 540px;
+    margin: 0 20px;
+}
+.store .find-store{
+    float: right;
+    width: 360px;
+    height: 100%;
+}
+.store .find-store form{
+    height: 120px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    background: #555;
+}
+.store .find-store form label{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #f3efec;
+}
+.store .find-store form .group{
+    position: relative;
+}
+.store .find-store form .group input{
+    width: 100%; /*모바일 오면 사이즈가 변하므로 사이즈 100% 줌*/
+    height: 40px;
+    padding: 0 40px 0 10px;/*버튼 올 자리 40*/
+    box-sizing: border-box;
+    font-size: 18px;
+    background: #fff;
+    color: #555;
+}
+.store .find-store form .group button{
+    position: absolute;
+    right: 0; bottom: 0;
+}
+
+/* scrollbar */
+.store .scrollbar-inner{
+    background: #008055;  
+ }
+ .scrollbar-inner > .scroll-element.scroll-y{
+    right:0;
+ }
+
+ .scrollbar-inner > .scroll-element .scroll-element_track{
+    background-color: #004c33;
+    opacity: 1;
+ }
+ .scrollbar-inner > .scroll-element .scroll-element_outer, .scrollbar-inner > .scroll-element .scroll-element_track, .scrollbar-inner > .scroll-element .scroll-bar{
+    border-radius: 0;
+    opacity: 1;
+ }
+ .scrollbar-inner > .scroll-element .scroll-bar,
+ .scrollbar-inner > .scroll-element:hover .scroll-bar{
+    background-color: #fff;
+ }
+ 
+ 
+ 
+.store .find-store .store-list{
+   /* scrollbar 플러그인으로 대체됨 */
+    /* overflow-y: auto; */
+    height: 390px;
+}
+.store .find-store .store-list li{
+    height: 80px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.store .find-store .store-list li.active{
+    background: #006140;
+}
+.store .find-store .store-list li a{
+    color: #fff;
+    
+}
+.store .find-store .store-list li a b{
+    display: block;
+    padding-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.store .find-store .store-list li a span{
+    font-size: 14px;
+    opacity: 0.5;
+}
+#pagination{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #004c33;
+}
+#pagination a{
+    padding: 0 5px;
+    color: #000000;
+}
+#pagination a{
+    color: #fff;
+}
+#map{
+    float: left;
+    width: calc(100% - 360px); height: 100%;
+    background:url(../img/map.jpg) no-repeat center;
+}
+
+
+/* offers ================================================================ */
+
+.offers{
+    position: relative;
+}
+.offers h3{
+    color: #fff;
+}
+.offers::before{
+    z-index: -1;
+    /* display: block;  absolute걸면 안걸어줘도 됨*/ 
+    position: absolute;
+    content: '';
+    width: 100%; height: 500px;
+    transform: translateY(-240px);
+    background: url(../img/logo-bg2.png) no-repeat center 90% #555;
+}
+.offers .swiper-slide{
+    float: left;
+    width: 33.33%;
+}
+.offers .swiper-slide a{
+    display: block;
+    margin: 0 20px;
+    padding-bottom: 30px;
+    background: #fff;
+    text-align: center;
+    font-weight: 700;
+    
+}
+.offers .swiper-slide a img{
+    width: 100%;
+    display: block;
+}
+.offers .swiper-slide a span{
+    padding-top: 10px;
+    color: #ccc;
+    font-size: 14px;
+}
+.offers .swiper-slide a strong{
+    display: block;/*가운데에 맞춰도 되므로 여기만 block줘도 됨*/
+    padding : 20px 0 50px;
+    font-size: 18px;
+    color: #555;
+}
+.offers .swiper-slide a b{
+    font-size: 24px;
+    color: #008055;
+}
+
+
+/* rewards ================================================================ */
+.rewards{
+    padding: 140px 0 120px;
+    background: url(../img/bg-star.png) no-repeat right 50px;
+}
+.rewards .img-box{
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+.rewards .img-box .btn-group{
+    display: inline-block;
+    vertical-align: top; /* 여백을 없애줘용*/
+}
+.rewards .img-box .btn-group button{
+    float: left;
+    margin: 0 12px;
+}
+
+.rewards .text-box{
+    float: left;
+    padding-left: 120px;
+    box-sizing: border-box;
+}
+.rewards .text-box h4{
+    padding: 50px 0 25px;
+    color: #555;
+    font-size: 36px;
+    font-weight: 700;
+}
+.rewards .text-box h4 span{
+    color: #008055;
+}
+.rewards .text-box h4 span sup{
+    vertical-align: super;/* sup은 초기화 했으므로, 기존 가지고 있는 super값 줌*/
+    font-size: 20px;
+}
+.rewards .text-box ul{
+    margin-bottom: 15px;
+}
+.rewards .text-box ul li{
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #555;
+}
+.rewards .text-box ul li:nth-child(2){
+    line-height: 54px;
+}
+.rewards .text-box ul li a{
+    color: #006140;
+}
+.rewards .text-box ul li sup{
+    font-size: 5px;
+    vertical-align: super;
+}
+.rewards .text-box ul li .step{
+    font-weight: 700;
+}
+.rewards .text-box ul li .step i{
+    display: inline-block;
+    margin: 0 30px 0 10px;
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    background: #006140;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+}
+.rewards .text-box .link a{
+    color: #777;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #777;
+}
+.rewards .text-box .link a sup{
+    font-size: 5px;
+    vertical-align: super;
+}
+
+/* footer ===================================================================== */
+
+footer{
+    height: 320px;
+    padding: 50px 0;
+    box-sizing: border-box;
+    background: #555;
+}
+
+footer h2{
+    position: absolute;
+    left: 20px;
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translateX(-100%);
+}
+footer .sns{
+    position: absolute;
+    top: 0; right: 0;
+}
+footer .sns li{
+    float: left;
+    margin-right: 20px;
+}
+footer .etc{
+    margin-left: 120px;
+    transform: translateY(-10px);
+}
+footer .etc li a{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 30px;
+}
+footer small{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 12px;
+    color: #fff;
+}
+
+
+/* media query ===================================================================== */
+/* 메뉴버튼을 1600이하부터는 좌측아닌 위쪽으로 올리기 위해서 특별히 잡은 구간 */
+@media (min-width:768px) and (max-width:1600px){
+    header .container{max-width: 100%;}
+    header h1{
+        float: none;
+        text-align: center;
+        padding: 20px 0;
+    }
+    header .btn-store{
+        position: absolute;
+        top: 25px; left: 90px;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        border: 0;
+        font-size: 0;
+    }
+    .gnb{
+        top: 20px; left: 15px;
+        width: 60px; height: 60px;
+        border: 0;
+}
+
+    .gnb .gnb-popup.open{
+        left:0;
+        border-left: none;
+    }

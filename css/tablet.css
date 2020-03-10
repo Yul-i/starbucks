@@ -1,0 +1,60 @@
+@charset "UFT-8";
+
+/* service ==================================================*/
+
+.service{
+    max-width: 560px;
+}
+.service .col{
+    width: 100%;
+}
+
+.service .col:nth-child(1){
+    margin-bottom: 40px;
+}
+
+/* rewards =================================================================== */
+
+.rewards{
+    padding: 70px 0 50px;
+    background-position: right 15px;
+    background-size: auto 500px;
+}
+
+.rewards .img-box{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.rewards .img-box img{
+    display: none;
+}
+
+.rewards .img-box .btn-group button{
+    margin: 0 10px;
+}
+
+.rewards .text-box{
+    float: none;
+    padding: 0 25px 85px;
+}
+
+.rewards .text-box h4{
+    padding: 0 0 15px;
+    text-align: center;
+}
+
+.rewards .text-box h4 sup{
+    font-size: 10px;
+}
+
+.rewards .text-box ul{
+    width: 450px;
+    margin: 0 auto 15px;
+}
+
+.rewards .text-box .link{
+    text-align: center;
+}
+

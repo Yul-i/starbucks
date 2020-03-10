@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Starbucks</title>
+    <link rel="shortcut icon" href="../starbucks-en/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="js/jquery.scrollbar.min.js"></script>
+    <script src="js/starbuck.js"></script>
+    <!-- css입력시 읽어야하는 순서 꼭 지키기 -->
+    <!-- <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width:767px)">
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width:768px) and (max-width:1100px)"> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="#" class="sp sp-logo"><span class="blind">starbucks</span></a></h1>
+            <button class="btn-store"><span class="sp sp-map"></span>Praque.CZ</button>
+            <div class="login-group">
+                <button class="btn-sign-in">Sign In</button>
+                <button class="btn-sign-up">Sign Up</button>
+                <!-- 모바일용 -->
+                <button class="sp sp-star"><span class="blind">login</span></button>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="gnb">
+        <button class="sp sp-menu"><span class="blind">menu</span></button>
+        <div class="gnb-popup">
+            <!-- ul>li*5>a[href="#"] -->
+            <ul>
+                <li><a href="#">coffee</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">coffeehouse</a></li>
+                <li><a href="#">stories</a></li>
+                <li><a href="#">gift cards</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <h2 class="blind">contents</h2>
+        <article class="slide">
+            <h3 class="blind">slide</h3>
+            <div class="container">
+                <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-active">
+                        <span>SUMMER DRINKS</span>
+                        <b>Meet our new<br><span>Summer</span> Caramel Frappuccino</b>
+                        <p>Cold latter and cappuccino, frappucino, iced mocha<br> are available in our new summer menu.</p>
+                        <button>Find out more</button>                     
+                    </div>
+                    <div class="swiper-slide">
+                        <span>SUMMER DRINKS</span>
+                        <b><span>50% discount</span><br> Coffee Frappuccino</b>
+                        <p>Cold latter and cappuccino, frappucino, iced mocha<br> are available in our new summer menu.</p>
+                        <button>Find out more</button>                     
+                    </div>
+                    <div class="swiper-slide">
+                        <span>SUMMER DRINKS</span>
+                        <b><span>Delicious</span><br> Java Chip Frappuccino</b>
+                        <p>Cold latter and cappuccino, frappucino, iced mocha<br> are available in our new summer menu.</p>
+                        <button>Find out more</button>                     
+                    </div>
+                </div>
+                </div>
+                <img src="img/slide-coffee1.png" alt="">
+                <div class="pagination">
+                    <span class="page">01</span>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="controls">
+                <div class="arrow">
+                    <button class="sp sp-prev"><span class="blind">prev</span></button>
+                    <button class="sp sp-next"><span class="blind">next</span></button>
+                </div>
+                <div class="info">
+                    <div class="progress"><span></span></div>
+                    <div class="text-box">
+                        <span class="direction">Next Slide</span>
+                        <span class="page">02</span>
+                        <b>50% discount<br>Coffee Frappuccino</b>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </article>
+    
+        <article class="service container">
+            <h3 class="blind">service</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="wrap">
+                        <a href="#">
+                            <img src="img/starbucks-service1.jpg" alt="01. Make an online order. Order a drink, set time and the place
+                            and grab your fresh coffee or a tea">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="wrap">
+                        <a href="#" class="inner-col1">
+                            <img src="img/starbucks-service2.jpg" alt="02. Join Starbucks RewardsTM. Earn points, get free coffee and many other prizes">
+                        </a>
+                        <a href="#" class="inner-col2">
+                            <img src="img/starbucks-service3.jpg" alt="03. Find your perfect coffee">
+                        </a>
+                        <a href="#" class="inner-col3">
+                            <img src="img/starbucks-service4.jpg" alt="04. Go to Starbucks storeTM">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="store container">
+            <h3>Find <span>the nearest</span> Starbucks</h3>
+            <div class="row">
+                <div class="find-store" id="find-store">
+                    <form onsubmit="searchPlaces(); return false;">
+                        <label for="keyword">Find Store</label>
+                        <div class="group">
+                           <input type="text" id="keyword" value="신촌 스타벅스" placeholder="지역명을 입력하세요">
+                           <button type="submit" class="sp sp-search"><span class="blind">search</span></button>
+                        </div>
+                     </form>
+                    <div class="scrollbar-inner">
+                        <ul class="store-list" id="store-list">
+                            <!-- <li class="active">
+                                <a href="#">
+                                    <b>1. Starbucks Central Park</b>
+                                    <span>10:00 - 23:00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>2.Starbucks Darling Square</b>
+                                    <span>10:00 - 23:00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>3.Starbucks Haymarket</b>
+                                    <span>10:00 - 23:00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>4.Starbucks 525 George St</b>
+                                    <span>10:00 - 23:00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>5.Starbucks QVB</b>
+                                    <span>10:00 - 23:00</span>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div id="pagination"></div>
+                </div>
+                <!-- 지도 들어가오 -->
+                <div id="map">
+
+                </div>
+            </div>
+        </article>
+
+        <article class="offers">
+            <h3>Exclusive offers</h3>
+            <div class="row container swiper-container"> <!-- 배경은 따로 하기 위해 div container줌 -->
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="img/offer1.jpg" alt="">
+                            <span>Grande · 437ml</span>
+                            <strong>Caramel Frappuccino</strong>
+                            <b>$4.35</b>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="img/offer2.jpg" alt="">
+                            <span>Grande · 437ml</span>
+                            <strong>Java Chip Frappuccino</strong>
+                            <b>$5.35</b>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="img/offer3.jpg" alt="">
+                            <span>Grande · 437ml</span>
+                            <strong>Coffee Frappuccino</strong>
+                            <b>$4.80</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="rewards">
+            <h3 class="blind">starbucks rewards</h3>
+            <div class="row container">
+                <div class="img-box">
+                    <img src="img/phone.png" alt="">
+                    <div class="btn-group">
+                        <button class="sp sp-appstore"><span class="blind">appstore</span></button>
+                        <button class="sp sp-googleplay"><span class="blind">sp-googleplay</span></button>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <h4>Join <span>Starbucks Reward<sup>TM</sup></span>
+                    <br>earn points, get free coffee
+                    </h4>
+                    <ul>
+                        <li><span class="step">step<i>1</i></span>
+                            <span>Download our app or register <a href="#">here</a>
+                            </span>
+                        </li>
+                        <li><span class="step">step<i>2</i></span>
+                            <span>Join Starbucks Rewards<sup>TM</sup></span>
+                        </li>
+                        <li><span class="step">step<i>3</i></span>
+                            <span>Buy coffee using your smartphone</span>
+                        </li>
+                        <li><span class="step">step<i>4</i></span>
+                            <span>Earn points and get free coffee</span>
+                        </li>
+                        <li><span class="step">step<i>5</i></span>
+                            <span>Track your stats and recieve best deals</span>
+                        </li>
+                    </ul>
+                    <div class="link">
+                        <a href="#">Learn more about Starbucks Rewards<sup>TM</sup>Program</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    
+    <footer>
+        <div class="row container">
+            <h2 class="sp sp-logo-text"><span class="blind">starbucks</span></h2>
+            <ul class="sns">
+                <li><a href="#" class="sp sp-twitter"><span class="blind">twitter</span></a></li>
+                <li><a href="#" class="sp sp-facebook"><span class="blind">facebook</span></a></li>
+                <li><a href="#" class="sp sp-pinterest"><span class="blind">pinterest</span></a></li>
+            </ul>
+            <ul class="etc row">
+                <li><a href="#">COFFEE AND TEA</a></li>
+                <li><a href="#">IN-STORE MENU</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">GLOBAL RESPONSIBILITY</a></li>
+                <li><a href="#">STARBUCKS CARD</a></li>
+                <li><a href="#">COPPEE HOUSE</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">CAREERS AT STABUCKS</a></li>
+            </ul>
+            <small>Copyright&copy; 2019 Starbucks Coffee Australia. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <!-- 카카오 지도 -->
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=240c910a88ebabf80bda2f292a7c47ae&libraries=services"></script>
+    <script src="js/map.js"></script>
+    </body>
+</html>
